@@ -17,7 +17,7 @@ namespace USAPolice.Controllers
         // GET: User
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View();
         }
         public ActionResult Login()
         {
@@ -68,8 +68,9 @@ namespace USAPolice.Controllers
             };
             var isExist = db.Users.Any(x => x.Name.Equals(user.Name)
             && x.Password.Equals(user.Password));
+            var userList = db.Users.ToList();
             // var isExist = _userRepository.IsUserValid(user);
-            var a = 0;
+
 
 
             if (isExist)
