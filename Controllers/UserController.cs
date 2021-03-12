@@ -23,7 +23,7 @@ namespace USAPolice.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
@@ -33,8 +33,10 @@ namespace USAPolice.Controllers
         {
             var user = new User
             {
+                Id = 2,
                 Name = userViewModel.Name,
-                Password = userViewModel.Password
+                Password = userViewModel.Password,
+                Email = userViewModel.Email
             };
             var confirmPassword = userViewModel.RepeatPassword;
 
@@ -43,18 +45,27 @@ namespace USAPolice.Controllers
                 return RedirectToAction("Login", "User");
             }
 
-            var isSaved = _userRepository.SaveUser(user);
+            user.RepeatPassword = confirmPassword;
 
-            if (isSaved)
-            {
-                return RedirectToAction("Login", "User");
-            }
-            else
-            {
-                ViewBag.ValidationMessage = "Username or Password is not correct!";
+           var a = user;
 
-                return View();
-            }
+            db.Users.Add(user);
+            db.SaveChanges();
+
+
+            //var isSaved = _userRepository.SaveUser(user);
+
+            //if (isSaved)
+            //{
+            //    return RedirectToAction("Login", "User");
+            //}
+            //else
+            //{
+            //    ViewBag.ValidationMessage = "Username or Password is not correct!";
+
+            //    return View();
+            //}
+            return RedirectToAction("Login", "User");
 
         }
     

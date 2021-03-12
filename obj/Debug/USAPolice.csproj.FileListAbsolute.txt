@@ -154,3 +154,5 @@ G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.csproj.CoreCompileIn
 G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.csproj.CopyComplete
 G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.dll
 G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.pdb
+G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.Migrations.changeIdtype.resources
+G:\helpForOfficeWork\SignIn-SignUpByASP\obj\Debug\USAPolice.Migrations.ididentityset.resources
